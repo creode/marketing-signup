@@ -34,8 +34,8 @@ interface MarketingSignupTypeInterface {
      *
      * @param array $api_arguments
      *   List of arguments to be passed to the signup sender.
-     * @return \Creode\MarketingSignup\MarketingSignupSenderInterface
+     * @return Creode\MarketingSignup\MarketingSignupSenderInterface
      *   Sender Object for sending data through.
      */
-    public function constructSender();
+    public function constructSender($api_arguments = []);
 }

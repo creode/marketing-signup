@@ -16,7 +16,7 @@ abstract class MarketingSignupTypeBase implements MarketingSignupTypeInterface {
     /**
      * Sender class
      *
-     * @var \Creode\MarketingSignup\MarketingSignupSenderInterface
+     * @var Creode\MarketingSignup\MarketingSignupSenderInterface
      */
     protected $sender;
 
@@ -35,7 +35,7 @@ abstract class MarketingSignupTypeBase implements MarketingSignupTypeInterface {
     /**
      * {@inheritdoc}
      */
-    abstract public function constructSender($api_arguments);
+    abstract public function constructSender($api_arguments = []);
 
     /**
      * {@inheritdoc}
@@ -81,15 +81,15 @@ abstract class MarketingSignupTypeBase implements MarketingSignupTypeInterface {
 
         // If not in the list of required fields then data is not valid.
         foreach ($this->requiredFieldKeys() as $required_field_key) {
-            if (!in_array($required_field_key, $this->data)) {
+            if (!in_array($required_field_key, array_keys($this->data))) {
                 $isValid = false;
             }
         }
 
         // If we have a field not in the optional or required field lists then remove it.
-        foreach ($this->data as $key => $field) {
-            if (!in_array($field, $this->optionalFieldKeys()) || !in_array($field, $this->requiredFieldKeys())) {
-                unset($this->data[$key]);
+        foreach ($this->data as $field_key => $field) {
+            if (!in_array($field_key, array_keys($this->optionalFieldKeys())) && !in_array($field_key, array_keys($this->requiredFieldKeys()))) {
+                unset($this->data[$field_key]);
             }
         }
 

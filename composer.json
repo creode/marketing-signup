@@ -8,5 +8,8 @@
             "email": "jamie.sykes@creode.co.uk"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {"Creode\\MarketingSignup\\": "src/"}
+    }
 }
