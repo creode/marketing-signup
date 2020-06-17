@@ -21,10 +21,11 @@ abstract class MarketingSignupTypeBase implements MarketingSignupTypeInterface {
     protected $sender;
 
     /**
-     * Constructor for the Newsletter Signup Type Base.
-     * 
+     * Marketing Signup Type Constructor.
+     *
      * @param array $data
-     *   Data to push to the newsletter.
+     * @param array $api_arguments
+     * @param string|boolean $list_id
      */
     public function __construct(array $data, $api_arguments = [], $list_id = false) {
         $this->data = $data;
