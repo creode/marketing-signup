@@ -1,0 +1,15 @@
+{
+    "name": "creode/marketing-signup",
+    "description": "Library which provides a basic interface for marketing signup integrations.",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Jamie Sykes",
+            "email": "jamie.sykes@creode.co.uk"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {"Creode\\MarketingSignup\\": "src/"}
+    }
+}
