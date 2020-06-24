@@ -21,3 +21,5 @@ Here is a list of potential features that we may want to think about implementin
 * Field Mappings/Formatting - Include a field mapping/formatting function in one of our classes so that we know how to format the format for specific apis. This could be an external class but we might be able to provide some kind of functionality in a base class to handle them.
 
 * Improved Error Handling - Currently the error handling needs to be handled by the user calling this library. We should try to move this here if we can.
+
+* Additional Functionality to put functions in like `updateOrCreate()` to allow us to update specific data. Might be tricky since we shouldn't update SOURCE fields for certain sites.
