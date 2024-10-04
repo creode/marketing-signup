@@ -21,6 +21,13 @@ abstract class MarketingSignupTypeBase implements MarketingSignupTypeInterface {
     protected $sender;
 
     /**
+     * The contact list ID within the CRM.
+     *
+     * @var string|boolean
+     */
+    protected $list_id;
+
+    /**
      * Marketing Signup Type Constructor.
      *
      * @param array $data
@@ -89,7 +96,7 @@ abstract class MarketingSignupTypeBase implements MarketingSignupTypeInterface {
 
         // If we have a field not in the optional or required field lists then remove it.
         foreach ($this->data as $field_key => $field) {
-            if (!in_array($field_key, array_keys($this->optionalFieldKeys())) && !in_array($field_key, array_keys($this->requiredFieldKeys()))) {
+            if (!in_array($field_key, $this->optionalFieldKeys()) && !in_array($field_key, $this->requiredFieldKeys())) {
                 unset($this->data[$field_key]);
             }
         }
